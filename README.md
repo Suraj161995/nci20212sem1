@@ -1,10 +1,15 @@
 ## Prerequisites ##
 
 -- Have Python3 installed
+
 -- Have PIP installed
+
 -- Have some sort of IDE like Remix or VSCode installed
+
 -- Have docker desktop installed (for the docker components)
 
+![3](https://user-images.githubusercontent.com/52279327/207641073-72a0fa9d-2065-4292-abb4-7fd0ac84979a.png)
+![2](https://user-images.githubusercontent.com/52279327/207641023-1690633e-983f-4aac-a46b-710b36f78dfb.png)
 
 
 ## Read smart contract values with Python.env file ##
@@ -48,13 +53,11 @@ Private_Key=config('SUPER_SECRET_PRIVATE_KEY')
 ![1](https://user-images.githubusercontent.com/52279327/207640957-dffa144a-ba9b-438a-b37c-8602a449a32f.png)
 
 
-3. Now copy this contract and get into the transaction details for the same as per the below snap for reference.
-
-![2](https://user-images.githubusercontent.com/52279327/207641023-1690633e-983f-4aac-a46b-710b36f78dfb.png)
+3. Now copy this contract and get into the transaction details for the same as per the snap for reference oin prerequisites.
 
 ## We see that the contract has been created ##
 
-![3](https://user-images.githubusercontent.com/52279327/207641073-72a0fa9d-2065-4292-abb4-7fd0ac84979a.png)
+
 
 
 
