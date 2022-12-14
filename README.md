@@ -1,4 +1,36 @@
-## ERC-20 could be termed as a technical specification for exchangeable tokens which are produced for the Ethereum blockchain. This token is the one which is interchangeable with the other tokens, whereas, the non-exchangeable tokens or called as non-fungible tokens (NFTs) are non-transferable tokens which could never be interchanged with others.
+## Prerequisites ##
+
+-- Have Python3 installed
+-- Have PIP installed
+-- Have some sort of IDE like Remix or VSCode installed
+-- Have docker desktop installed (for the docker components)
+
+
+
+## Read smart contract values with Python.env file ##
+We are going to use a .env file to store our environment variables, rather than hard codingthem into the application
+
+INFURA_URL=https://goerli.infura.io/v3/d46d3ae31c304b42813094d18609519e
+CONTRACT_ADDRESS=0x...
+OWNER_ADDRESS=0x...
+SUPER_SECRET_PRIVATE_KEY=...
+
+INFURA_URL is the URL we will use to gain access to Infura’s ethereum nodes
+CONTRACT_ADDRESS is the address of your deployed token smart contract
+OWNER_ADDRESS is the address you used to deploy the contract
+SUPER_SECRET_PRIVATE_KEY is your OWNER_ADDRESS private key (from metamask)Imports
+
+We will import Web3 and config.  
+Web3 gives us the smart contract interaction, and configgives us the .env file functionality.fromweb3importWeb3fromdecoupleimportconfig
+Set up Environment 
+
+Varsinfura_url=config('INFURA_URL')
+contractAddress=config('CONTRACT_ADDRESS')
+abi='{... from etherscan}'
+ownerAddress=config('OWNER_ADDRESS')
+Private_Key=config('SUPER_SECRET_PRIVATE_KEY')
+
+
 
 ## Lets get on to the steps for the creation of our own Ethereum contract of GoerliETH coin.
 
