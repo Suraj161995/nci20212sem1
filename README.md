@@ -1,6 +1,6 @@
-ERC-20 could be termed as a technical specification for exchangeable tokens which are produced for the Ethereum blockchain. This token is the one which is interchangeable with the other tokens, whereas, the non-exchangeable tokens or called as non-fungible tokens (NFTs) are non-transferable tokens which could never be interchanged with others.
+## ERC-20 could be termed as a technical specification for exchangeable tokens which are produced for the Ethereum blockchain. This token is the one which is interchangeable with the other tokens, whereas, the non-exchangeable tokens or called as non-fungible tokens (NFTs) are non-transferable tokens which could never be interchanged with others.
 
-Lets get on to the steps for the creation of our own Ethereum contract of GoerliETH coin.
+## Lets get on to the steps for the creation of our own Ethereum contract of GoerliETH coin.
 
 ## In our file Storage.sol, we shall provide our own name and symbol of the contract for new coin ##
 
