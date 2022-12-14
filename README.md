@@ -1,102 +1,76 @@
 ## Prerequisites ##
-
--- Have Python3 installed
-
--- Have PIP installed
-
--- Have some sort of IDE like Remix or VSCode installed
-
--- Have docker desktop installed (for the docker components)
-
-![3](https://user-images.githubusercontent.com/52279327/207641073-72a0fa9d-2065-4292-abb4-7fd0ac84979a.png)
-![2](https://user-images.githubusercontent.com/52279327/207641023-1690633e-983f-4aac-a46b-710b36f78dfb.png)
-
-
-## Read smart contract values with Python.env file ##
-We are going to use a .env file to store our environment variables, rather than hard codingthem into the application
-
-INFURA_URL=https://goerli.infura.io/v3/d46d3ae31c304b42813094d18609519e
-
-CONTRACT_ADDRESS=0x...
-
-OWNER_ADDRESS=0x...
-
-SUPER_SECRET_PRIVATE_KEY=...
-
-INFURA_URL is the URL we will use to gain access to Infura’s ethereum nodes
-
-CONTRACT_ADDRESS is the address of your deployed token smart contract
-
-OWNER_ADDRESS is the address you used to deploy the contract
-
-SUPER_SECRET_PRIVATE_KEY is your OWNER_ADDRESS private key (from metamask)Imports
-
-We will import Web3 and config.  
-
-Web3 gives us the smart contract interaction, and configgives us the .env file functionality.fromweb3importWeb3fromdecoupleimportconfig
-
-Set up Environment 
-
-Varsinfura_url=config('INFURA_URL')
-
-contractAddress=config('CONTRACT_ADDRESS')
-
-abi='{... from etherscan}'
-
-ownerAddress=config('OWNER_ADDRESS')
-
-Private_Key=config('SUPER_SECRET_PRIVATE_KEY')
+1. Create an account on MetaMask
+<img width="359" alt="Metamask" src="https://user-images.githubusercontent.com/118826262/207653934-30631c55-505c-416e-a0dd-8642c3b233e4.png">
 
 
 
-## Lets get on to the steps for the creation of our own Ethereum contract of GoerliETH coin.
+2. Create a contract on Remix IDE
 
-## In our file Storage.sol, we shall provide our own name and symbol of the contract for new coin ##
-
-	constructor(string memory name_, string memory symbol_) {
-        _name = "Suraj_95218";
-        _symbol = "Suraj_95218";
-
-        _mint(_msgSender(), 1000000000000000000000000);
-    }
-	
-## Now running this file and then deploying the same over the Remix IDE. Please refer below snap that it activates the metamask tab for confirming the same and to proceed thereafter.##
-
-![1](https://user-images.githubusercontent.com/52279327/207640957-dffa144a-ba9b-438a-b37c-8602a449a32f.png)
-
-
-3. Now copy this contract and get into the transaction details for the same as per the snap for reference oin prerequisites.
-
-## We see that the contract has been created ##
+<img width="1440" alt="deploy" src="https://user-images.githubusercontent.com/118826262/207654009-a3ea2296-2d0d-40f1-8665-d4dbe049fd29.png">
 
 
 
+3. Get the contract address from Etherscan website
+
+<img width="1440" alt="Etherscan" src="https://user-images.githubusercontent.com/118826262/207654363-e7e11cc2-4898-40ea-91fe-0442c7545403.png">
 
 
-## Building the image along with the docker tag, find the snap below the command for reference ##
+## Install python on your system via packager or from the web ##
 
-```docker build -t suraj161995/my_goerli_eth:suraj .```
+## Install pip3 ##
+``` sudo apt install python3-pip```
 
-![4](https://user-images.githubusercontent.com/52279327/207642378-ade4884f-cfba-42f8-a549-4559ec075ab9.png)
+## Install Web3 ##
+``` pip3 install web3 ```
 
-	
-## Now push the code to the Docker Hub using the Docker Tag, we shall see that the image is published over the Docker Hub ##
+For mac users
 
-```docker push suraj161995/my_goerli_eth:suraj```
-
-
-![5](https://user-images.githubusercontent.com/52279327/207642401-99330978-4dfc-4780-96c4-c99711e8cfdc.png)
+``` python3 -m pip install web3 ```
 
 
+## Install decouple ##
+``` pip3 install python-decouple ```
 
+## Create an .env file and import items to it  ##
+
+<img width="611" alt="Screenshot 2022-12-14 at 16 09 46" src="https://user-images.githubusercontent.com/118826262/207647890-2c7d078e-2a42-4de5-9668-71f278e6b517.png">
+
+INFURA_URL is the URL we will use to gain access to Infura’s ethereum nodesCONTRACT_ADDRESS is the address of your deployed token smart contractOWNER_ADDRESS is the address you used to deploy the contractSUPER_SECRET_PRIVATE_KEY is your OWNER_ADDRESS private key (from metamask)
+
+
+## Imports ##
+<img width="459" alt="Screenshot 2022-12-14 at 16 12 01" src="https://user-images.githubusercontent.com/118826262/207648756-e0b60a19-50ec-4d35-aeab-9fc6e34b0406.png">
+
+Import web3 and config from decouple and config gives us he .env functionality.
+
+## Set up envronment variables ##
+
+<img width="611" alt="Screenshot 2022-12-14 at 16 09 46" src="https://user-images.githubusercontent.com/118826262/207647890-2c7d078e-2a42-4de5-9668-71f278e6b517.png">
+
+Setup the following variables as shown in the figure. abi can be found on the etherscan website. refer the following diagram.
+
+<img width="1101" alt="Screenshot 2022-12-14 at 16 18 21" src="https://user-images.githubusercontent.com/118826262/207650240-9b8083c9-1c9c-4642-b2f9-499900bb2387.png">
+
+## Run the eth_transfer.py file ##
+
+``` python3 eth_transfer.py ```
+
+## Build an Image ##
+
+```docker build --tag [repositoryName]/[imageName]:tagName .```
+
+
+## Run an image ##
+
+```docker run --name [repositoryName] -p 8090:8080 [imageName]```
 
 ## Run the curl command ##
 
-## This transfers ETH: ##
+This transfers ETH:
 
 ```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "amount":"0.05"}' http://localhost:8090/eth```
 
-## This transfers token: ##
+This transfers token:
 
 ```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C"}' http://localhost:8090/token```
 
