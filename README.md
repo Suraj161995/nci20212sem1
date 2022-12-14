@@ -10,9 +10,13 @@
 
 
 
-3. Get the contract address from Etherscan website
+3. Get the contract address from Etherscan website as shown in the below reference.
 
-<img width="1440" alt="Etherscan" src="https://user-images.githubusercontent.com/118826262/207654363-e7e11cc2-4898-40ea-91fe-0442c7545403.png">
+![2](https://user-images.githubusercontent.com/52279327/207658798-24f0b9fb-8840-442a-a6d5-0f34dedc2c08.png)
+
+
+![3](https://user-images.githubusercontent.com/52279327/207658744-6413810a-a546-4ee5-802c-cf9cfa84b2ff.png)
+
 
 
 ## Install python on your system via packager or from the web ##
@@ -73,4 +77,8 @@ This transfers ETH:
 This transfers token:
 
 ```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C"}' http://localhost:8090/token```
+
+## DOCKER PULL COMMAND FOR THE DEPLOYED IMAGE ##
+
+```docker pull suraj161995/my_goerli_eth:suraj```
 
