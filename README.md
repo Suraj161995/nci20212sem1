@@ -16,23 +16,35 @@
 We are going to use a .env file to store our environment variables, rather than hard codingthem into the application
 
 INFURA_URL=https://goerli.infura.io/v3/d46d3ae31c304b42813094d18609519e
+
 CONTRACT_ADDRESS=0x...
+
 OWNER_ADDRESS=0x...
+
 SUPER_SECRET_PRIVATE_KEY=...
 
 INFURA_URL is the URL we will use to gain access to Infura’s ethereum nodes
+
 CONTRACT_ADDRESS is the address of your deployed token smart contract
+
 OWNER_ADDRESS is the address you used to deploy the contract
+
 SUPER_SECRET_PRIVATE_KEY is your OWNER_ADDRESS private key (from metamask)Imports
 
 We will import Web3 and config.  
+
 Web3 gives us the smart contract interaction, and configgives us the .env file functionality.fromweb3importWeb3fromdecoupleimportconfig
+
 Set up Environment 
 
 Varsinfura_url=config('INFURA_URL')
+
 contractAddress=config('CONTRACT_ADDRESS')
+
 abi='{... from etherscan}'
+
 ownerAddress=config('OWNER_ADDRESS')
+
 Private_Key=config('SUPER_SECRET_PRIVATE_KEY')
 
 
