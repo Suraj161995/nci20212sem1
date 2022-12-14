@@ -11,10 +11,10 @@ web3 = Web3(Web3.HTTPProvider(infuraUrl))
 
 if web3.isConnected():
     print('CONNECTED TO WEB3!!!!')
-    amountInEther = "0.1"
+    amountInEther = "0.01"
     # targetAddress = Web3.toChecksumAddress("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C")
     # targetAccount= Web3.toChecksumAddress("0xC1a7977959992982CbaAc3Cb5df4d97aaB3aCc53")
-    targetAccount = Web3.toChecksumAddress("0x9Dc94C63D3e437C4Abff038418230f045f72ad31")
+    targetAccount = Web3.toChecksumAddress("0x4b69BEe3D41C6ff232850E844542eC9C8654E7EE")
 
     nonce = web3.eth.getTransactionCount(ownerAddress)
     print("nonce (tx count) is " + str(nonce))
@@ -27,7 +27,7 @@ if web3.isConnected():
         'nonce': nonce,
         'to': targetAccount,
         'value': value,
-        'gas': 2000000,
+        'gas': 50000,
         'gasPrice': gasPrice,
         'chainId': 5
     }
