@@ -24,30 +24,32 @@ Lets get on to the steps for the creation of our own Ethereum contract of Goerli
 
 ![3](https://user-images.githubusercontent.com/52279327/207641073-72a0fa9d-2065-4292-abb4-7fd0ac84979a.png)
 
+
+
+## Building the image along with the docker tag, find the snap below the command for reference ##
+
+```docker build -t suraj161995/my_goerli_eth:suraj .```
+
+![4](https://user-images.githubusercontent.com/52279327/207642378-ade4884f-cfba-42f8-a549-4559ec075ab9.png)
+
 	
+## Now push the code to the Docker Hub using the Docker Tag, we shall see that the image is published over the Docker Hub ##
+
+```docker push suraj161995/my_goerli_eth:suraj```
+
+
+![5](https://user-images.githubusercontent.com/52279327/207642401-99330978-4dfc-4780-96c4-c99711e8cfdc.png)
 
 
 
-
-
-
-
-## Build an Image ##
-
-```docker build --tag nci02 .```
-
-
-## Run an image ##
-
-```docker run --name ncilab02 -p 8090:8080 nci02```
 
 ## Run the curl command ##
 
-This transfers ETH:
+## This transfers ETH: ##
 
 ```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "amount":"0.05"}' http://localhost:8090/eth```
 
-This transfers token:
+## This transfers token: ##
 
 ```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C"}' http://localhost:8090/token```
 
